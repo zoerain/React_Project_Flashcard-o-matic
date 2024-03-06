@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { createCard, readDeck } from "../utils/api/index";
+import CardForm from "./CardForm";
 
 
 //Add a card to a deck component
@@ -65,40 +66,7 @@ function AddCard() {
           </li>
         </ol>
       </nav>
-
-      <form onSubmit={submitHandler}>
-        <h2>{deck.name}: Add Card</h2>
-        <div className="form-group">
-          <label>Front</label>
-          <textarea
-            onChange={changeHandler}
-            id="front"
-            name="front"
-            type="text"
-            className="form-control"
-            value={newCard.front}
-          />
-        </div>
-        <div className="form-group">
-          <label>Back</label>
-          <textarea
-            onChange={changeHandler}
-            id="back"
-            name="back"
-            type="text"
-            className="form-control"
-            value={newCard.back}
-          />
-        </div>
-
-        <button
-          onClick={completeHandler}
-          className="btn btn-secondary mx-1"
-        >Done</button>
-
-        <button className="btn btn-primary mx-1" type="submit"
-        >Save</button>
-      </form>
+     <CardForm />
     </div>
   );
 }

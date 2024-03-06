@@ -1,6 +1,6 @@
 import React from "react";
 
-function CardForm({ submitHandler, changeHandler, cancelHandler, deck }) {
+function CardForm({ submitHandler, changeHandler, completeHandler, card }) {
     return (
         <form onSubmit={submitHandler}>
             <div className="form-group">
@@ -11,7 +11,7 @@ function CardForm({ submitHandler, changeHandler, cancelHandler, deck }) {
                     name="back"
                     type="text"
                     className="form-control"
-                    value={deck.front}
+                    value={card.front}
                 />
             </div>
             <div className="form-group">
@@ -22,15 +22,15 @@ function CardForm({ submitHandler, changeHandler, cancelHandler, deck }) {
                     name="back"
                     type="text"
                     className="form-control"
-                    value={deck.back}
+                    value={card.back}
                     />
             </div>
 
-            <button onClick={cancelHandler} className="btn btn-secondary mx-1">
-                Cancel
+            <button onClick={completeHandler} className="btn btn-secondary mx-1">
+                Done
             </button>
 
-            <button onClick={submitHandler} className="btin btn=primary mx-1" type="submit">
+            <button className="btin btn=primary mx-1" type="submit">
                 Save
             </button>
         </form>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { readCard, readDeck, updateCard } from "../utils/api/index";
 import { useParams, Link, useHistory } from "react-router-dom";
+import CardForm from "./CardForm";
 
 function EditCard() {
   const initialCardState = { id: '', front: '', back: '', deckId: '' };
@@ -55,7 +56,7 @@ function EditCard() {
     return result;
   };
 
-  //Handler for cancelling the form
+  //Handler for canceling the form
   const cancelHandler = async ()  => {
     history.push(`/decks/${deckId}`);
   };
@@ -66,6 +67,10 @@ function EditCard() {
       ...card,
       [target.name]: target.value,
     });
+  };
+
+  const completeHandler = async () => {
+    history.push(`/decks/${deckId}`);
   };
 
   return (
@@ -87,42 +92,7 @@ function EditCard() {
           </li>
         </ol>
       </nav>
-      <form onSubmit={submitHandler}>
-        <h2>Edit Card</h2>
-        <div className="form-group">
-          <label>Front</label>
-          <textarea
-            id="front"
-            name="front"
-            type="text"
-            onChange={changeHandler}
-            className="form-control"
-            value={card.front}
-          />
-        </div>
-
-        <div className="form-group">
-          <label>Back</label>
-          <textarea
-            id="back"
-            name="back"
-            type="text"
-            onChange={changeHandler}
-            className="form-control"
-            value={card.back}
-          />
-        </div>
-        <button
-          onClick={cancelHandler}
-          className="btn btn-secondary mx-1"
-        >Cancel</button>
-
-        <button 
-        type="submit" 
-        className="btn btn-primary mx-1"
-        >Save</button>
-
-      </form>
+      <CardForm />
     </div>
   );
 }

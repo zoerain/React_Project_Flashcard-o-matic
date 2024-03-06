@@ -46,7 +46,41 @@ function CreateDeck() {
           Create Deck
         </li>
       </ol>
-      <CardForm />
+      <form onSubmit={(event) => submitHandler(event)}>
+        <h1>Create Deck</h1>
+        <div className="form-group">
+          <label>Name</label>
+          <input
+            id="name"
+            name="name"
+            onChange={changeHandler}
+            required
+            type="text"
+            value={newDeck.name}
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label>Description</label>
+          <textarea
+            id="description"
+            name="description"
+            onChange={changeHandler}
+            type="text"
+            value={newDeck.description}
+            className="form-control"
+          />
+        </div>
+        <button
+          onClick={() => cancelHandler()}
+          className="btn btn-secondary mx-1"
+        >
+          Cancel
+        </button>
+        <button className="btn btn-primary mx-1" type="submit">
+          Submit
+        </button>
+      </form>
     </div>
   );
 }
