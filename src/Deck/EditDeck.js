@@ -86,7 +86,7 @@ function EditDeck() {
           />
         </div>
 
-        <button className="btn btn-secondary mx-1" onClick={handleCancel}>
+        <button className="btn btn-secondary mx-1" onClick={cancelHandler}>
           Cancel
         </button>
 
