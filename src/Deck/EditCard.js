@@ -4,31 +4,14 @@ import { useParams, Link, useHistory } from "react-router-dom";
 import CardForm from "./CardForm";
 
 function EditCard() {
-  const initialCardState = { id: '', front: '', back: '', deckId: '' };
-  const initialDeckState = { id: '', name: '', description: '' };
+  const initialCardState = { id: "", front: "", back: "", deckId: "" };
+  const initialDeckState = { id: "", name: "", description: "" };
 
   const [card, setCard] = useState(initialDeckState);
   const [deck, setDeck] = useState(initialCardState);
 
   const { cardId, deckId } = useParams();
   const history = useHistory();
-
-  //Get Card Data
-  useEffect(() => {
-    async function loadCardData() {
-      const abortController = new AbortController();
-      try {
-        const cardData = await readCard(cardId, abortController.signal);
-        setCard(cardData);
-      } catch (error) {
-        console.error("Something went wrong", error);
-      }
-      return () => {
-        abortController.abort();
-      };
-    }
-    loadCardData();
-  }, [cardId]);
 
   //Get Deck Data
   useEffect(() => {
@@ -47,6 +30,24 @@ function EditCard() {
     loadDeckData();
   }, [deckId]);
 
+
+  //Get Card Data
+  useEffect(() => {
+    async function loadCardData() {
+      const abortController = new AbortController();
+      try {
+        const cardData = await readCard(cardId, abortController.signal);
+        setCard(cardData);
+      } catch (error) {
+        console.error("Something went wrong", error);
+      }
+      return () => {
+        abortController.abort();
+      };
+    }
+    loadCardData();
+  }, [cardId]);
+
   //Handler for submitting edit card form
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -57,7 +58,7 @@ function EditCard() {
   };
 
   //Handler for canceling the form
-  const cancelHandler = async ()  => {
+  const cancelHandler = async () => {
     history.push(`/decks/${deckId}`);
   };
 
@@ -78,21 +79,20 @@ function EditCard() {
       <nav>
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <Link to="/">
-              Home
-            </Link>
+            <Link to="/">Home</Link>
           </li>
           <li className="breadcrumb-item">
-            <Link to={`/decks/${deckId}`}>
-              {deck.name}
-            </Link>
+            <Link to={`/decks/${deckId}`}>{deck.name}</Link>
           </li>
-          <li className="breadcrumb-item active">
-            Edit Card {cardId}
-          </li>
+          <li className="breadcrumb-item active">Edit Card {cardId}</li>
         </ol>
       </nav>
-      <CardForm />
+      <CardForm
+        submitForm={submitForm}
+        changeForm={changeForm}
+        card={card}
+        deckId={deckId}
+      />
     </div>
   );
 }

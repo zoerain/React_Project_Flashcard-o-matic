@@ -1,41 +1,45 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function CardForm({ submitHandler, changeHandler, completeHandler, card }) {
-    return (
-        <form onSubmit={submitHandler}>
-            <div className="form-group">
-                <label>Front</label>
-                <textarea
-                    onChange={changeHandler}
-                    id="front"
-                    name="back"
-                    type="text"
-                    className="form-control"
-                    value={card.front}
-                />
-            </div>
-            <div className="form-group">
-                <label>Back</label>
-                <textarea
-                    onChange={changeHandler}
-                    id="back"
-                    name="back"
-                    type="text"
-                    className="form-control"
-                    value={card.back}
-                    />
-            </div>
+function CardForm({ submitForm, changeForm, card, deckId }) {
+  return (
+    <form id="cardForm" onSubmit={submitForm}>
+      <div>
+        <label>Front</label>
+        <textarea
+          name="front"
+          value={card.front}
+          onChange={changeForm}
+          id="front"
+          className="form-control mb-3"
+          placeholder="Front side of card"
+          rows={2}
+        />
 
-            <button onClick={completeHandler} className="btn btn-secondary mx-1">
-                Done
-            </button>
+        <label>Back</label>
+        <textarea
+          name="back"
+          value={card.back}
+          onChange={changeForm}
+          id="back"
+          className="form-control mb-3"
+          placeholder="Back side of card"
+          rows={2}
+        />
+        <Link
+          to={`/decks/${deckId}`}
+          className="btn btn-secondary mr-2"
+          name="cancel"
+        >
+          Done
+        </Link>
 
-            <button className="btin btn=primary mx-1" type="submit">
-                Save
-            </button>
-        </form>
-    )
+        <button type="submit" className="btn btn-primary">
+          Save
+        </button>
+      </div>
+    </form>
+  );
 }
-
 
 export default CardForm;

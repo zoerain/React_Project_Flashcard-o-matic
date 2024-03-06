@@ -1,72 +1,61 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { createCard, readDeck } from "../utils/api/index";
 import CardForm from "./CardForm";
 
-
-//Add a card to a deck component
 function AddCard() {
-  const initialState = {
-    front: '',
-    back: '',
-  };
-  const [newCard, setNewCard] = useState(initialState);
-  const [deck, setDeck] = useState({});
-  const history = useHistory();
+  const [deck, setDeck] = useState([]);
+  const [card, setCard] = useState({ front: "", back: "", deckId: "" });
+
   const { deckId } = useParams();
 
   useEffect(() => {
-    async function loadData() {
-      const abortController = new AbortController();
-      try {
-        const deckData = await readDeck(deckId, abortController.signal);
-        setDeck(deckData);
-      } catch (error) {
-        console.error("Something went wrong", error);
-      }
-      return () => {
-        abortController.abort();
-      };
-    }
-    loadData();
-  }, []);
+    const abortController = new AbortController();
+    const deckInfo = async () => {
+      const response = await readDeck(deckId, abortController.signal);
+      setDeck(() => response);
+      console.log(readDeck(deckId, abortController.signal));
+    };
+    deckInfo();
 
-  //Input change handler
-  const changeHandler = ({ target }) => {
-    setNewCard({
-      ...newCard,
-      [target.name]: target.value,
-    });
-  }
+    return () => abortController.abort();
+  }, [deckId]);
 
-  //Handler for submitting new card
-  const submitHandler = async (event) => {
+  const changeForm = ({ target }) => {
+    setCard({ ...card, [target.name]: target.value });
+  };
+
+  const submitForm = (event) => {
     event.preventDefault();
-    await createCard(deckId, newCard);
-    setNewCard(initialState);
-    history.go(0);
+    setCard({ ...card, deckId: deckId });
+    createCard(deckId, card);
+    console.log("'submitForm' saved");
+    setCard({ front: "", back: "", deckId: "" });
   };
-
-  const completeHandler = async () => {
-    history.push(`/decks/${deckId}`);
-  };
-
   return (
-    <div>
-      <nav>
+    <div className="col-9 mx-auto">
+      <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <Link to="/">Home</Link>
+            <Link to={"/"}> Home </Link>
           </li>
           <li className="breadcrumb-item">
             <Link to={`/decks/${deckId}`}>{deck.name}</Link>
           </li>
-          <li className="breadcrumb-item active" aria-current="page">
-            Add Card
+          <li className="breadcrumb-item">
+            <Link to={`/decks/${deckId}/cards/new`}>Add Card </Link>
           </li>
         </ol>
       </nav>
-     <CardForm />
+      <div className="row pl-3 pb-2">
+        <h1>{deck.name}: Add Card</h1>
+      </div>
+      <CardForm
+        submitForm={submitForm}
+        changeForm={changeForm}
+        card={card}
+        deckId={deckId}
+      />
     </div>
   );
 }
