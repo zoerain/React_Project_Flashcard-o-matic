@@ -1,11 +1,6 @@
 {
   "decks": [
     {
-      "name": "ierjnfkjenrkff",
-      "description": "ekjfnkwjnefwe",
-      "id": 1
-    },
-    {
       "name": "wekjfnkwjefwefwef",
       "description": "wefuwekfj kjnwekfn wefjnkwjenfkjwef",
       "id": 2
@@ -13,52 +8,22 @@
   ],
   "cards": [
     {
-      "front": "iuhiujef",
-      "back": "3khbk3r",
-      "deckId": 1,
-      "id": 1
-    },
-    {
-      "front": "kjbnkdsc",
-      "back": "smdnc sdc",
-      "deckId": 1,
+      "front": "qajdhbjwehdbjsbedf",
+      "back": "",
+      "deckId": 2,
       "id": 2
     },
     {
-      "front": "sdnc sndc",
-      "back": "sdc smdn cmnd cmns d",
-      "deckId": 1,
+      "front": "edkbwsekfbsefdc",
+      "back": "wsedfjhsebdfjshdbc",
+      "deckId": 2,
       "id": 3
     },
     {
-      "front": "sdcm smdnc ",
-      "back": "ss dmcn sdmnc ",
-      "deckId": 1,
+      "front": "wsefkhbsmdnbskjd",
+      "back": "sedfuhskjfnksedf",
+      "deckId": 2,
       "id": 4
-    },
-    {
-      "front": "4",
-      "back": "5",
-      "deckId": 1,
-      "id": 5
-    },
-    {
-      "front": "6",
-      "back": "7",
-      "deckId": 1,
-      "id": 6
-    },
-    {
-      "front": "8",
-      "back": "9",
-      "deckId": 1,
-      "id": 7
-    },
-    {
-      "front": "10",
-      "back": "11",
-      "deckId": 1,
-      "id": 8
     }
   ]
 }

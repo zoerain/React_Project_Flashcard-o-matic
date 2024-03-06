@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { createDeck } from "../utils/api/index";
 import { Link, useHistory } from "react-router-dom";
-
-
+import CardForm from "./CardForm";
+ 
 //Create a new deck component
 function CreateDeck() {
   const history = useHistory();
 
   const initialState = {
-    name: '',
-    description: '',
+    name: "",
+    description: "",
   };
 
   const [newDeck, setNewDeck] = useState(initialState);
@@ -46,41 +46,7 @@ function CreateDeck() {
           Create Deck
         </li>
       </ol>
-      <form onSubmit={(event) => submitHandler(event)}>
-        <h1>Create Deck</h1>
-        <div className="form-group">
-          <label>Name</label>
-          <input
-            id="name"
-            name="name"
-            onChange={changeHandler}
-            required
-            type="text"
-            value={newDeck.name}
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <label>Description</label>
-          <textarea
-            id="description"
-            name="description"
-            onChange={changeHandler}
-            type="text"
-            value={newDeck.description}
-            className="form-control"
-          />
-        </div>
-        <button
-          onClick={() => cancelHandler()}
-          className="btn btn-secondary mx-1"
-        >
-          Cancel
-        </button>
-        <button className="btn btn-primary mx-1" type="submit">
-          Submit
-        </button>
-      </form>
+      <CardForm />
     </div>
   );
 }

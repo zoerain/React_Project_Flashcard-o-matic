@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { readDeck, updateDeck } from "../utils/api/index";
 import { useParams, Link, useHistory } from "react-router-dom";
+import CardForm from "./CardForm";
 
 //Component to edit a deck
 function EditDeck() {
-  const initialDeckState = { id: '', name: '', description: '' };
+  const initialDeckState = { name: "", description: "" };
   const [deck, setDeck] = useState(initialDeckState);
   const { deckId } = useParams();
   const history = useHistory();
@@ -36,15 +37,15 @@ function EditDeck() {
   };
 
   //Handler for input changes
-   const changeHandler = ({ target }) => {
-     setDeck({
-       ...deck,
-       [target.name]: target.value,
-     });
-   };
+  const changeHandler = ({ target }) => {
+    setDeck({
+      ...deck,
+      [target.name]: target.value,
+    });
+  };
 
   //Handler for canceling edit form
-  const handleCancel = async () => {
+  const cancelHandler = async () => {
     history.push(`/decks/${deckId}`);
   };
 
@@ -61,42 +62,7 @@ function EditDeck() {
           <li className="breadcrumb-item active">Edit Deck</li>
         </ol>
       </nav>
-      <form onSubmit={submitHandler}>
-        <h1>Edit Deck</h1>
-        <div className="form-group">
-          <label>Name</label>
-          <input
-            onChange={changeHandler}
-            id="name"
-            name="name"
-            type="text"
-            className="form-control"
-            value={deck.name}
-          />
-        </div>
-        <div className="form-group">
-          <label>Description</label>
-          <textarea
-            onChange={changeHandler}
-            id="description"
-            name="description"
-            type="text"
-            className="form-control"
-            value={deck.description}
-          />
-        </div>
-
-        <button
-          className="btn btn-secondary mx-1"
-          onClick={handleCancel}
-        >Cancel</button>
-
-        <button 
-          type="submit"
-          className="btn btn-primary mx-1"
-          >Submit</button>
-
-      </form>
+      <CardForm />
     </div>
   );
 }
