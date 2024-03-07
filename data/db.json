@@ -1,46 +1,88 @@
 {
   "decks": [
     {
-      "name": "Jordans Pros",
-      "description": "Self explanantory",
+      "name": "first",
+      "description": "deck",
       "id": 1
     },
     {
-      "name": "Jordans Cons",
-      "description": "Self Explanatory",
+      "name": "qewjhdbw",
+      "description": "wjdhbwjedf",
       "id": 2
     }
   ],
   "cards": [
     {
-      "front": "Curly hair",
-      "back": "i like curly hair",
+      "front": "very first",
+      "back": "card",
       "deckId": 1,
       "id": 1
     },
     {
-      "front": "Can have seriosus conversations",
-      "back": "Can be with an immature fellow",
+      "front": "wefhbwjehkfb",
+      "back": "wefjhbwejfh",
       "deckId": 1,
       "id": 2
     },
     {
-      "front": "When I tell him to change something he does",
-      "back": "Actually cares to make me happy",
+      "front": "efkhbewkjfhb",
+      "back": "ewjhbwejfhbwef",
       "deckId": 1,
       "id": 3
     },
     {
-      "front": "Likes to show me off",
-      "back": "I looooooove that",
+      "front": "ewjhbejhbfw",
+      "back": "wefhbwejhb",
       "deckId": 1,
       "id": 4
     },
     {
-      "front": "Has already brought me to meet his family and friends",
-      "back": "he must take me seriously",
+      "front": "webfjwhebf",
+      "back": "",
       "deckId": 1,
       "id": 5
+    },
+    {
+      "front": "wejfhbjwhebf",
+      "back": "webwefbjwhef",
+      "deckId": 1,
+      "id": 6
+    },
+    {
+      "front": "wekfwkehfb",
+      "back": "wejhfbjwhebf",
+      "deckId": 1,
+      "id": 7
+    },
+    {
+      "front": "last",
+      "back": "card",
+      "deckId": 1,
+      "id": 8
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 1,
+      "id": 9
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 1,
+      "id": 10
+    },
+    {
+      "front": "last",
+      "back": "card",
+      "deckId": 1,
+      "id": 11
+    },
+    {
+      "front": "last",
+      "back": "card",
+      "deckId": 1,
+      "id": 12
     }
   ]
 }
