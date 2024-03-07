@@ -137,7 +137,19 @@ function Deck() {
       </div>
     );
   } else {
-    return null;
+    return (
+      <div>
+        <h3>This deck is empty</h3>
+        <div>
+          <Link
+            to={`/decks/${deckId}/cards/new`}
+            className="btn btn-secondary mx-2"
+          >
+            Add Cards
+          </Link>
+        </div>
+      </div>
+    );
   }
 }
 

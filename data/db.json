@@ -1,53 +1,46 @@
 {
   "decks": [
     {
-      "name": "wekjfnkwjefwefwef",
-      "description": "wefuwekfj kjnwekfn wefjnkwjenfkjwef",
+      "name": "Jordans Pros",
+      "description": "Self explanantory",
+      "id": 1
+    },
+    {
+      "name": "Jordans Cons",
+      "description": "Self Explanatory",
       "id": 2
     }
   ],
   "cards": [
     {
-      "front": "qajdhbjwehdbjsbedf",
-      "back": "",
-      "deckId": 2,
+      "front": "Curly hair",
+      "back": "i like curly hair",
+      "deckId": 1,
+      "id": 1
+    },
+    {
+      "front": "Can have seriosus conversations",
+      "back": "Can be with an immature fellow",
+      "deckId": 1,
       "id": 2
     },
     {
-      "front": "edkbwsekfbsefdc",
-      "back": "wsedfjhsebdfjshdbc",
-      "deckId": 2,
+      "front": "When I tell him to change something he does",
+      "back": "Actually cares to make me happy",
+      "deckId": 1,
       "id": 3
     },
     {
-      "front": "wsefkhbsmdnbskjd",
-      "back": "sedfuhskjfnksedf",
-      "deckId": 2,
+      "front": "Likes to show me off",
+      "back": "I looooooove that",
+      "deckId": 1,
       "id": 4
     },
     {
-      "front": "kjbneksjnsd",
-      "back": "kdjhbskjdvbsd",
-      "deckId": 2,
+      "front": "Has already brought me to meet his family and friends",
+      "back": "he must take me seriously",
+      "deckId": 1,
       "id": 5
-    },
-    {
-      "front": "wejfhbwef",
-      "back": "wkejfnwkef",
-      "deckId": 2,
-      "id": 6
-    },
-    {
-      "front": "wejhfbwjef",
-      "back": "wekfjbwnef",
-      "deckId": 2,
-      "id": 7
-    },
-    {
-      "front": "wekfjbwemf",
-      "back": "wefhbwkefh",
-      "deckId": 2,
-      "id": 8
     }
   ]
 }
