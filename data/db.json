@@ -13,18 +13,6 @@
   ],
   "cards": [
     {
-      "front": "very first",
-      "back": "card",
-      "deckId": 1,
-      "id": 1
-    },
-    {
-      "front": "wefhbwjehkfb",
-      "back": "wefjhbwejfh",
-      "deckId": 1,
-      "id": 2
-    },
-    {
       "front": "efkhbewkjfhb",
       "back": "ewjhbwejfhbwef",
       "deckId": 1,
@@ -83,6 +71,12 @@
       "back": "card",
       "deckId": 1,
       "id": 12
+    },
+    {
+      "front": "knjkjn",
+      "back": "kjnkjn",
+      "deckId": 2,
+      "id": 13
     }
   ]
 }

@@ -31,7 +31,7 @@ function CardForm({ submitForm, changeForm, card, deckId }) {
           className="btn btn-secondary mr-2"
           name="cancel"
         >
-          Cancel
+          Done
         </Link>
 
         <button type="submit" className="btn btn-primary">
